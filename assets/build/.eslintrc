@@ -1,6 +1,7 @@
 {
   "root": false,
   "rules": {
+    "linebreak-style": 0,
     "import/no-extraneous-dependencies": 0,
     "prefer-rest-params": 0,
     "comma-dangle": ["error", {
