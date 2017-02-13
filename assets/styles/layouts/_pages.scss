@@ -2,12 +2,16 @@
   height: 100vh;
   background: url("./../../images/bg_2.jpg") no-repeat center;
   background-size: contain;
-  margin:0;
+  margin: 0;
 }
 
 body {
   line-height: 1;
   font-family: Arial, sans-serif;
+}
+
+.wrap.container {
+  z-index: 1;
 }
 
 .nav {
@@ -100,10 +104,37 @@ header {
 }
 
 .border {
-  width: calc(100% - 32px);
+  width: calc(100% - 33px);
   height: calc(100vh - 32px);
   border: 8px solid $orange;
   margin: 8px;
   position: absolute;
-  z-index: 0;
+  z-index: -1;
+}
+
+.project_main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  p {
+    color: $orange;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.project_information {
+  &-clipped {
+    clip-path: url('#svgPath');
+    overflow: scroll;
+    background-color: $orange;
+    height: 470px;
+    width: 910px;
+    > div {
+      width: 720px;
+      margin: 110px 200px 170px;
+    }
+  }
 }
