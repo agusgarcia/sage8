@@ -24,8 +24,44 @@
     @endif
 
     <p>taxonomies : </p>
-    @php($taxonomy_objects = get_object_taxonomies( 'annee', 'objects' ))
-    {{ $taxonomy_objects }}
+    @php($terms = acf_get_taxonomy_terms('taxonomy_annee'))
+    @if ( $terms != null )
+        not null
+        {{$terms}}
+        @foreach( $terms as $term )
+            {{ $term->name  }}
+        @endforeach
+    @else
+        terms null
+    @endif
+
+
+    <?php
+    // your taxonomy name
+    $tax = 'cat';
+
+    // get the terms of taxonomy
+    $terms = get_terms( $tax, $args = array(
+            'hide_empty' => false, // do not hide empty terms
+    ));
+
+    // loop through all terms
+    foreach( $terms as $term ) {
+
+        echo 'terms :';
+        // Get the term link
+        $term_link = get_term_link( $term );
+
+        if( $term->count > 0 )
+            // display link to term archive
+            echo '<a href="' . esc_url( $term_link ) . '">' . $term->name .'</a>';
+
+        elseif( $term->count !== 0 )
+            // display name
+            echo '' . $term->name .'';
+    }
+    ?>
+
 
 
 
