@@ -2,7 +2,6 @@
 @section('content')
 
     @include('partials.page-header')
-    <p>---- archive concert</p>
 
     @if (!have_posts())
         <div class="alert alert-warning">
@@ -13,7 +12,8 @@
 
     @php($the_query = new WP_Query(array(
     'post_type' => 'concert',
-    'orderby'   => 'taxonomy_annee',
+    'annee' => date('Y'),
+    'orderby'   => 'annee',
 	'order' => 'ASC')))
 
     @if($the_query->have_posts())
@@ -21,49 +21,20 @@
             @php($the_query->the_post())
             @include ('partials.content-concert')
         @endwhile
-    @endif
-
-    <p>taxonomies : </p>
-    @php($terms = acf_get_taxonomy_terms('taxonomy_annee'))
-    @if ( $terms != null )
-        not null
-        {{$terms}}
-        @foreach( $terms as $term )
-            {{ $term->name  }}
-        @endforeach
     @else
-        terms null
+        <p>Pas de concerts</p>
     @endif
 
-
-    <?php
-    // your taxonomy name
-    $tax = 'cat';
-
-    // get the terms of taxonomy
-    $terms = get_terms( $tax, $args = array(
-            'hide_empty' => false, // do not hide empty terms
-    ));
-
-    // loop through all terms
-    foreach( $terms as $term ) {
-
-        echo 'terms :';
-        // Get the term link
-        $term_link = get_term_link( $term );
-
-        if( $term->count > 0 )
-            // display link to term archive
-            echo '<a href="' . esc_url( $term_link ) . '">' . $term->name .'</a>';
-
-        elseif( $term->count !== 0 )
-            // display name
-            echo '' . $term->name .'';
-    }
-    ?>
-
-
-
+    @php($tax = 'taxonomy_annee')
+    @php($terms = get_terms('annee'))
+    @if ($terms != null )
+        <ul>
+            @foreach( $terms as $term )
+                @php($term_link = get_term_link($term))
+                <li><a href='{{esc_url($term_link)}}'> {{ $term->name }}</a></li>
+            @endforeach
+        </ul>
+    @endif
 
     {!! get_the_posts_navigation() !!}
 

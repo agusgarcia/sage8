@@ -68,7 +68,7 @@ add_filter('template_include', function ($template) {
 
 add_filter('sage/display_sidebar', function ($sidebar) {
     if (is_post_type_archive('concert')) {
-        return true;
+        // return true;
     }
     return $sidebar;
 });
