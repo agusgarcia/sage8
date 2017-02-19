@@ -60,7 +60,22 @@ add_filter('template_include', function ($template) {
     return get_theme_file_path('index.php');
 }, PHP_INT_MAX);
 
+
+/**
+ * Add sidebar to pages
+ */
+
+
+add_filter('sage/display_sidebar', function ($sidebar) {
+    if (is_post_type_archive('concert')) {
+        // return true;
+    }
+    return $sidebar;
+});
+
 /**
  * Tell WordPress how to find the compiled path of comments.blade.php
  */
 add_filter('comments_template', 'App\\template_path');
+
+
