@@ -6,6 +6,7 @@
 }
 
 body {
+
   line-height: 1;
   font-family: Arial, sans-serif;
 }
@@ -135,6 +136,26 @@ header {
     > div {
       width: 720px;
       margin: 110px 200px 170px;
+      background: #f2f3f4;
+    }
+  }
+}
+
+/**** Concerts Archive ****/
+.post-type-archive-concert {
+
+  .concerts {
+
+    display: flex;
+    justify-content: space-between;
+
+    &_list {
+      background-color: orange;
+      flex-basis: 650px;
+    }
+
+    &_archive-container {
+      background-color: orange;
     }
   }
 

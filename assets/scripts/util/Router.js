@@ -25,7 +25,6 @@ export default class Router {
   loadEvents() {
     // Fire common init JS
     this.fire('common');
-
     // Fire page-specific init JS, and then finalize JS
     document.body.className
       .toLowerCase()
