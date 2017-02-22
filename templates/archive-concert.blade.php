@@ -38,7 +38,7 @@
     @php($tax = 'taxonomy_annee')
     @php($terms = get_terms('annee'))
     @if ($terms != null )
-        <h1>Archive ?</h1>
+        <h1>Archive </h1>
         <ul>
             @foreach( $terms as $term )
                 @php($term_link = get_term_link($term))

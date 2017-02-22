@@ -25,3 +25,7 @@ const routes = new Router({
 
 /** Load Events */
 jQuery(document).ready(() => routes.loadEvents());
+
+if (module.hot) {
+  module.hot.accept();
+}
