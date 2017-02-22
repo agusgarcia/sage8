@@ -1,3 +1,23 @@
 body {
-  background: lightgoldenrodyellow;
+  background: #f2f3f4;
+}
+
+/**** Concerts Archive ****/
+.post-type-archive-concert {
+
+  .concerts {
+
+    display: flex;
+    justify-content: space-between;
+
+    &_list {
+      background-color: orange;
+      flex-basis: 650px;
+    }
+
+    &_archive-container {
+      background-color: orange;
+    }
+  }
+
 }
