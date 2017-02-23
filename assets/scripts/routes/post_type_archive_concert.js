@@ -8,7 +8,7 @@ export default {
     };
 
     this.els.archive.on('click', 'li', () => {
-      console.log("ahhhhhh");
+      console.log("Click 2");
     });
 
   },
