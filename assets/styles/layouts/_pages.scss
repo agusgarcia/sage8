@@ -148,10 +148,25 @@ header {
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     &_list {
       background-color: orange;
-      flex-basis: 650px;
+      flex-basis: 753px;
+      height: 430px;
+      padding: 70px 140px;
+
+      .concert_year {
+        &:last-child {
+          margin-bottom: 190px;
+        }
+      }
+    }
+
+    .svg-clipped {
+      -webkit-clip-path: url(#svgPath);
+      clip-path: url(#svgPath);
+      overflow: scroll;
     }
 
     &_archive-container {
