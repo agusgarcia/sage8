@@ -1,0 +1,75 @@
+/**** Concerts Archive ****/
+.post-type-archive-concert {
+  .concerts {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - (15 * 4px));
+    color: $white;
+    &_list {
+      background-color: $orange;
+      flex-basis: 630px;
+      height: 451px;
+      list-style: none;
+
+      .concert_year {
+        margin-left: 110px;
+        margin-top: 70px;
+        margin-bottom: 150px;
+
+        .the-year {
+          font-size: 23px;
+        }
+        article {
+          margin-left: 20px;
+        }
+      }
+
+      .concert_date {
+        font-weight: bold;
+        margin: 15px auto 1px;
+      }
+
+      .concert_place, .concert_group {
+        margin: 0;
+      }
+    }
+
+    .svg-clipped {
+      clip-path: url('#svgPath');
+      overflow: scroll;
+    }
+
+    &_archive-container {
+
+      h1 {
+        background: url('../../images/archive_background.png') no-repeat bottom right;
+        background-size: cover;
+        width: 250px;
+        height: 80px;
+        font-size: 22px;
+        line-height: 42px;
+        text-align: center;
+        span {
+          margin-left: 70px;
+        }
+      }
+
+      ul {
+        clip-path: url('#svgPathArchives');
+        overflow: scroll;
+        background-color: $orange;
+        width: 220px;
+        height: 220px;
+        padding: 30px 0 0;
+        text-align: center;
+        margin-left: 70px;
+
+        li:last-child {
+          margin-bottom: 130px;
+        }
+      }
+    }
+  }
+
+}

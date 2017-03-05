@@ -2,7 +2,6 @@
 <html @php(language_attributes())>
 @include('partials.head')
 <body @php(body_class())>
-<div class="border"></div>
 @php(do_action('get_header'))
 @if(is_front_page())
     @include('partials.header')

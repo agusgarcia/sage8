@@ -1,3 +1,3 @@
 <div class="page-header">
-  <h1>{!! App\title() !!}</h1>
+  <p class="button-tgomez"><a href="{{ home_url('/') }}" >Thibault Gomez</a></p>
 </div>

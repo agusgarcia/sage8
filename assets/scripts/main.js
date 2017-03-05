@@ -1,7 +1,3 @@
-if (module.hot) {
-  module.hot.accept();
-}
-
 /** import external dependencies */
 import 'jquery';
 
@@ -12,6 +8,7 @@ import home from './routes/home';
 // import projects from './routes/projects';
 import aboutUs from './routes/about';
 import postTypeArchiveConcert from './routes/post_type_archive_concert';
+import postTypeArchiveProjects from './routes/post_type_archive_projects';
 
 /**
  * Populate Router instance with DOM routes
@@ -27,15 +24,8 @@ const routes = new Router({
   /** Concerts page */
   postTypeArchiveConcert,
   /** Projects page */
-  // projects,
+  postTypeArchiveProjects,
 });
 
 /** Load Events */
 jQuery(document).ready(() => routes.loadEvents());
-
-
-if (module.hot) {
-  module.hot.accept();
-}
-
-

@@ -147,7 +147,7 @@ add_action('after_setup_theme', function () {
      * Create @asset() Blade directive
      */
     sage('blade')->compiler()->directive('asset', function ($asset) {
-        return '<?= App\\asset_path(\''.trim($asset, '\'"').'\'); ?>';
+        return "<?= App\\asset_path({$asset}); ?>";
     });
 });
 
