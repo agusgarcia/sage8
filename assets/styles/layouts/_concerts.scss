@@ -1,5 +1,9 @@
 /**** Concerts Archive ****/
 .post-type-archive-concert {
+
+  background: url("../images/concerts_background.jpg") no-repeat top left;
+  background-size: auto 100vh;
+
   .concerts {
     display: flex;
     justify-content: space-around;

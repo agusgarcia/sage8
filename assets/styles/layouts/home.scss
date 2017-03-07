@@ -2,7 +2,7 @@
   max-height: 100vh;
   margin: 0;
   .wrap.container {
-    background: url("./../../images/bg_2.jpg") no-repeat center;
+    background: url("../images/home_background.jpg") no-repeat center;
     background-size: contain;
   }
 
@@ -66,8 +66,20 @@
   .menu-contact {
     width: 44%;
     height: 19%;
-    margin-left: 13%;
-    margin-top: 44%;
+    margin-left: 16%;
+    margin-top: 45%;
+    a {
+      right: 6%;
+      top: 21%;
+      position: absolute;
+    }
+  }
+
+  .menu-actus {
+    width: 44%;
+    height: 19%;
+    margin-left: 6%;
+    margin-top: 36%;
     a {
       right: 6%;
       top: 21%;

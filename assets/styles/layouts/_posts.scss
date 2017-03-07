@@ -1,0 +1,39 @@
+.blog {
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+  }
+}
+
+.article-clipped {
+  clip-path: url('#svgPathArticle2');
+  overflow: scroll;
+  background-color: $orange;
+  width: 680px;
+  max-width: 80vw;
+  height: 385px;
+}
+
+.article-clipped:nth-child(2n+1) {
+  clip-path: url('#svgPathArticle2');
+}
+
+article {
+  header {
+    margin-left: 50px;
+    margin-top: 40px;
+  }
+  > div {
+    margin-left: 50px;
+    width: 85%;
+  }
+  &:nth-child(2n+1) {
+    header {
+      margin-top: 90px;
+    }
+  }
+}

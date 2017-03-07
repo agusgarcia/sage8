@@ -10,7 +10,6 @@
             {!! get_search_form(false) !!}
         @endif
 
-
         @php($terms = get_terms(array(
     'taxonomy' => 'annee',
     'order' => 'DESC')))

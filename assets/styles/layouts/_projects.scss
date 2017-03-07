@@ -1,65 +1,68 @@
-.projects_archive {
-  margin-top: 40px;
-}
+.post-type-archive-projects {
+  background: url("../images/projects_background.jpg") no-repeat top right;
+  background-size: auto 100vh;
+  .projects_archive {
+    margin-top: 40px;
+  }
 
-.project {
+  .project {
 
-  &_main {
-    display: flex;
-    align-items: center;
-    margin-left: 30px;
-    p {
-      &:first-of-type {
-        width: 300px;
+    &_main {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+      p {
+        &:first-of-type {
+          width: 300px;
+        }
+        color: $orange;
+        font-weight: bold;
+        cursor: pointer;
       }
-      color: $orange;
-      font-weight: bold;
-      cursor: pointer;
     }
-  }
 
-  &_name {
-    text-transform: uppercase;
-    &:hover {
-      text-decoration: underline;
-      color: #272727;
+    &_name {
+      text-transform: uppercase;
+      &:hover {
+        text-decoration: underline;
+        color: #272727;
+      }
     }
-  }
 
-  &_information {
-    display: none;
-    height: 470px;
-    width: 910px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-
-    &_button-close {
-      position: absolute;
-      top: 20px;
-      right: 70px;
-      z-index: 3;
-      color: $white;
-      cursor: pointer;
-      font-size: 22px;
-    }
-    &-clipped {
-      clip-path: url('#svgPath');
-      overflow: scroll;
-      background-color: $orange;
+    &_information {
+      display: none;
       height: 470px;
       width: 910px;
-      > * {
-        margin-left: 190px;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+
+      &_button-close {
+        position: absolute;
+        top: 20px;
+        right: 70px;
+        z-index: 3;
+        color: $white;
+        cursor: pointer;
+        font-size: 22px;
       }
-      > p:first-child {
-        margin-top: 100px;
-      }
-      > :last-child {
-        margin-bottom: 230px;
+      &-clipped {
+        clip-path: url('#svgPath');
+        overflow: scroll;
+        background-color: $orange;
+        height: 470px;
+        width: 910px;
+        > * {
+          margin-left: 190px;
+        }
+        > p:first-child {
+          margin-top: 100px;
+        }
+        > :last-child {
+          margin-bottom: 230px;
+        }
       }
     }
   }
-
 }
