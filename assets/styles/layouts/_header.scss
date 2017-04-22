@@ -1,0 +1,33 @@
+.button-back, .button-tgomez, .button-lang {
+  top: 0;
+  right: 10px;
+  content: "X";
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  border: 10px solid $orange;
+  text-align: center;
+  line-height: 30px;
+  color: $orange;
+  font-weight: bold;
+  font-size: 20px;
+  &:hover {
+    color: $black;
+  }
+}
+.button-tgomez {
+  top: -16px;
+  left: 10px;
+  right: auto;
+  content: "";
+  width: auto;
+  border-right: none;
+  font-size: inherit;
+  padding: 0 20px;
+}
+
+.button-lang {
+  border-left:none;
+  font-size: inherit;
+  padding: 0 10px;
+}

@@ -26,11 +26,13 @@
       color: $orange;
       text-transform: uppercase;
       text-decoration: none;
-
+      &:hover {
+        color: $black;
+      }
     }
   }
 
-  .menu-concerts {
+  .menu-projets {
     width: 30%;
     height: 53%;
     margin-left: 6%;
@@ -41,7 +43,7 @@
     }
   }
 
-  .menu-projets {
+  .menu-concerts {
     width: 22%;
     height: 35%;
     margin-left: 58%;

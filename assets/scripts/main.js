@@ -8,6 +8,7 @@ import home from './routes/home';
 // import projects from './routes/projects';
 import aboutUs from './routes/about';
 import postTypeArchiveConcert from './routes/post_type_archive_concert';
+import postTypeArchiveConcertEN from './routes/post_type_archive_concert';
 import postTypeArchiveProjects from './routes/post_type_archive_projects';
 
 /**
@@ -23,6 +24,8 @@ const routes = new Router({
   aboutUs,
   /** Concerts page */
   postTypeArchiveConcert,
+  /** Concerts EN page */
+  postTypeArchiveConcertEN,
   /** Projects page */
   postTypeArchiveProjects,
 });

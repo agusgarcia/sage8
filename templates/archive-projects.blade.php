@@ -1,7 +1,6 @@
 @extends('layouts.base')
 @section('content')
-    <p class="button-tgomez"><a href="{{ home_url('/') }}" >Thibault Gomez</a> @php(wp_title($sep = '|'))</p>
-    <a href="{{ home_url('/') }}" class="button-back">X</a>
+    @include('partials.page-header')
     <div class="projects_archive">
         @if (!have_posts())
             <div class="alert alert-warning">

@@ -19,7 +19,7 @@
                     <li class="concert_year concert_year-{{ $term_name }}">
                         <p class="the-year">{{ $term_name }}</p>
                         @php($the_query = new WP_Query(array(
-           'post_type' => 'concert',
+           'post_type' => 'concerten',
            'annee' => $term_name,
            'order_by' => 'date',
            'order' => 'ASC')))

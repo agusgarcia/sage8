@@ -1,5 +1,5 @@
 /**** Concerts Archive ****/
-.post-type-archive-concert {
+.post-type-archive-concert, .post-type-archive-concert_en {
 
   background: url("../images/concerts_background.jpg") no-repeat top left;
   background-size: auto 100vh;
@@ -47,7 +47,7 @@
     &_archive-container {
 
       h1 {
-        background: url('../../images/archive_background.png') no-repeat bottom right;
+        background: url('../images/archive_background.png') no-repeat bottom right;
         background-size: cover;
         width: 250px;
         height: 80px;
@@ -68,6 +68,10 @@
         padding: 30px 0 0;
         text-align: center;
         margin-left: 70px;
+
+        li {
+          cursor: pointer;
+        }
 
         li:last-child {
           margin-bottom: 130px;
