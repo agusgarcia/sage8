@@ -1,0 +1,36 @@
+.bio, .page-template-template-bio {
+  background: url("../images/vita_background.jpg") no-repeat top right;
+  background-size: 100vw auto;
+
+  article {
+    display: flex;
+  }
+  .bio-content {
+    color: $white;
+    clip-path: url('#svgPath');
+    overflow: scroll;
+    background-color: $orange;
+    height: 455px;
+    width: 750px;
+    margin-top: 70px;
+    margin-left: 70px;
+    z-index: 1;
+    > * {
+      margin-left: 80px;
+      width: 80%;
+    }
+    >:first-child {
+      margin-top: 80px;
+    }
+    >:last-child {
+      margin-bottom: 330px;
+    }
+  }
+
+  img {
+    margin-left: -30px;
+    z-index: 2;
+    margin-top: 30px;
+  }
+
+}
