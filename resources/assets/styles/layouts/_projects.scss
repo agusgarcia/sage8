@@ -1,8 +1,10 @@
 .post-type-archive-projects {
   background: url("../images/projects_background.jpg") no-repeat top right;
-  background-size: auto 100vh;
-  .projects_archive {
-    margin-top: 40px;
+  background-size: auto 100%;
+  background-attachment: fixed;
+
+  article:not(:first-of-type) {
+    border-top: 2px $orange dashed;
   }
 
   .project {
@@ -10,22 +12,35 @@
     &_main {
       display: flex;
       align-items: center;
-      margin-left: 30px;
+      margin: 0 30px;
+      flex-wrap: wrap;
+      max-width: 750px;
+      justify-content: center;
+
       p {
         &:first-of-type {
           width: 300px;
         }
         color: $orange;
         font-weight: bold;
-        cursor: pointer;
+      }
+
+      iframe {
+        max-width: 100%;
       }
     }
 
     &_name {
       text-transform: uppercase;
-      &:hover {
+      margin-right: auto;
+      &.has-details:hover {
         text-decoration: underline;
         color: #272727;
+        cursor: pointer;
+      }
+
+      + .project_youtube {
+        width: auto;
       }
     }
 
@@ -33,12 +48,23 @@
       display: none;
       height: 470px;
       width: 910px;
-      position: absolute;
+      position: fixed;
       top: 50%;
       transform: translate(-50%, -50%);
       left: 50%;
+      pointer-events: none;
+      color: white;
 
-      &_button-close {
+      p {
+        max-width: 85vw;
+      }
+
+      img {
+        max-width: 90%;
+        height: auto;
+      }
+
+      &_button-close, &_button-arrows {
         position: absolute;
         top: 20px;
         right: 70px;
@@ -46,21 +72,86 @@
         color: $white;
         cursor: pointer;
         font-size: 22px;
+        pointer-events: auto;
       }
+
+      &_button-arrows {
+        top: 50px;
+        width: 10px;
+        right: 77px;
+      }
+
       &-clipped {
-        clip-path: url('#svgPath');
+        clip-path: url('#svgPath-' + random(4));
         overflow: scroll;
         background-color: $orange;
         height: 470px;
         width: 910px;
+        pointer-events: auto;
+
         > * {
-          margin-left: 190px;
+          margin-left: 280px;
+          pointer-events: auto;
         }
         > p:first-child {
           margin-top: 100px;
         }
         > :last-child {
           margin-bottom: 230px;
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .projects {
+
+    .project_information-clipped {
+      clip-path: url('#svgPathMobile-4');
+    }
+
+    @media screen and (min-width: 768px) {
+      &:nth-child(2n) {
+        .project_information-clipped {
+          clip-path: url('#svgPath-' + random(4));
+        }
+      }
+      &:nth-child(2n+1) {
+        .project_information-clipped {
+          clip-path: url('#svgPath-' + random(4));
+        }
+      }
+      &:nth-child(3n+2) {
+        .project_information-clipped {
+          clip-path: url('#svgPath-' + random(4));
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .post-type-archive-projects {
+    .project_main {
+      margin-left: 30px;
+      margin-right: 0;
+    }
+    .project {
+      &_youtube, &_soundcloud {
+        margin-left: auto;
+      }
+      &_information {
+        p {
+          max-width: 625px;
+        }
+        &-clipped {
+          > * {
+            margin-left: 190px;
+          }
         }
       }
     }

@@ -23,9 +23,16 @@ a {
   border: $border-size solid $orange;
   left: 0;
   right: 0;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   box-sizing: border-box;
-  margin: 0 $border-size;
+  margin: 0 $border-size $border-size;
+  padding: 50px 30px 0;
+}
+
+.main {
+  // width: 90vw;
+  // margin: 70px 40px 0;
 }
 
 .abs-center {
@@ -36,7 +43,7 @@ a {
 }
 
 .background-black {
-  position: absolute;
+  position: fixed;
   display: none;
   top: -10px;
   bottom: -10px;
@@ -44,4 +51,21 @@ a {
   right: 0;
   background-color: $black;
   opacity: 0.3;
+}
+
+.rotate-phone {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 10px;
+  left: 20px;
+  right: 20px;
+  bottom: 10px;
+  z-index: 10;
+  p {
+    margin: auto;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+  }
 }

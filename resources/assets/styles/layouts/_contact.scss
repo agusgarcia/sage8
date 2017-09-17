@@ -1,0 +1,46 @@
+.contact {
+  background: url("../images/contact_background_2.jpg") no-repeat top left;
+  background-size: auto 90vh;
+  background-position: 0 -70px;
+  /**.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    > p {
+      background: url("../images/contact_shape.png") no-repeat;
+      text-align: center;
+      display: inline-block;
+      padding: 100px 70px;
+      margin: auto;
+      background-size: contain;
+    }
+  }**/
+
+  &_container {
+    clip-path: url("#svgContact");
+    background-color: $orange;
+    color: white;
+    height: 230px;
+    padding-top: 80px;
+    width: 700px;
+    margin: auto;
+    margin-top: 15vh;
+    overflow: scroll;
+    p {
+      padding-left: 80px;
+      max-width: 60vw;
+    }
+  }
+
+  .contact_credits {
+    font-size: 13px;
+    text-align: right;
+    right: 50px;
+    position: absolute;
+    bottom: 20px;
+    a {
+      text-decoration: underline;
+    }
+  }
+}

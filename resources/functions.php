@@ -89,3 +89,21 @@ if ($sage_views !== get_option('stylesheet')) {
     wp_redirect($_SERVER['REQUEST_URI']);
     exit();
 }
+
+add_filter( 'rest_endpoints', function( $e ){
+    if (isset($e['/wp/v2/users'])) {
+        unset($e['/wp/v2/users']);
+    }
+    if (isset($e['/wp/v2/users/(?P<id>[\d]+)'])) {
+        unset($e['/wp/v2/users/(?P<id>[\d]+)']);
+    }
+    return $e;
+});
+if (!is_admin()) {
+    if (preg_match('/author=([0-9]*)/i', $_SERVER['QUERY_STRING'])) die();
+    add_filter('redirect_canonical', 'shapeSpace_check_enum', 10, 2);
+}
+function shapeSpace_check_enum($redirect, $request) {
+    if (preg_match('/\?author=([0-9]*)(\/*)/i', $request)) die();
+    else return $redirect;
+}

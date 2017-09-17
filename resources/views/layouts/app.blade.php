@@ -3,12 +3,14 @@
 @include('partials.head')
 <body @php(body_class())>
 @php(do_action('get_header'))
-@if(is_front_page())
+
+@if(is_page('Home'))
     @include('partials.header')
 @endif
 <div class="wrap container" role="document">
     <div class="content">
         <main class="main">
+            <div class="rotate-phone"><p>Please, rotate your phone</p></div>
             @yield('content')
         </main>
         @if (App\display_sidebar())

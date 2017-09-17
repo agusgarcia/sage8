@@ -17,7 +17,6 @@ export default {
     this.els.$archive.on('click', 'li', this.changeYear.bind(this));
 
     if (this.currentYearList.length) {
-      console.log(this.currentYearList);
       this.notCurrentYearList.hide();
     } else {
       this.notCurrentYearList.hide();
@@ -29,7 +28,7 @@ export default {
   changeYear(e) {
     const $currentTarget = $(e.currentTarget);
     this.selectedYear = $currentTarget.data('year');
-    this.els.$concertYear.fadeOut();
+    this.els.$concertYear.fadeOut().delay(300);
 
     this.els.$concertYear.each((i, year) => {
       console.log(year);

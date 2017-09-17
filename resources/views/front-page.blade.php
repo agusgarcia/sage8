@@ -3,6 +3,8 @@
     @while(have_posts())
         @php(the_post())
         @include('partials.home-page-header')
-        @php(the_content())
+        <div class="page-bottom">
+            <p class="button-museum"><a href="#">Prochainement : Mon musée</a></p>
+        </div>
     @endwhile
 @endsection
