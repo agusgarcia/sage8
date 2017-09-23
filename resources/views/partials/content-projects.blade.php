@@ -15,10 +15,48 @@
                 </a>
                 <div class="project_information-clipped abs-center">
                     @if(get_field('project_youtube'))
-                        <p class="project_youtube">@php(the_field('project_youtube'))</p>
+                        <p class="project_youtube">
+
+                            @php($iframe = get_field('project_youtube'))
+                            @php(preg_match('/src="(.+?)"/', $iframe, $matches))
+                            @php($src = $matches[1])
+                            @php($params = array(
+                                    'controls' => 1,
+                                    'hd' => 1,
+                                    'autoplay' => 0,
+                                    'showinfo' => 0,
+                                    'enablejsapi' => 1,
+                                    'rel' => 0,
+                                    'VQ' => 'HD1080'
+                                    ))
+                            @php($new_src = add_query_arg($params, $src))
+                            @php($iframe = str_replace($src, $new_src, $iframe))
+                            @php($attributes = 'frameborder="0"')
+                            @php($iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe))
+                            {!! $iframe !!}
+
+                        </p>
                     @endif
                     @if(get_field('project_youtube_second'))
-                        <p class="project_youtube">@php(the_field('project_youtube_second'))</p>
+                        <p class="project_youtube">
+                            @php($iframe = get_field('project_youtube_second'))
+                            @php(preg_match('/src="(.+?)"/', $iframe, $matches))
+                            @php($src = $matches[1])
+                            @php($params = array(
+                                    'controls' => 1,
+                                    'hd' => 1,
+                                    'autoplay' => 0,
+                                    'showinfo' => 0,
+                                    'enablejsapi' => 1,
+                                    'rel' => 0,
+                                    'VQ' => 'HD1080'
+                                    ))
+                            @php($new_src = add_query_arg($params, $src))
+                            @php($iframe = str_replace($src, $new_src, $iframe))
+                            @php($attributes = 'frameborder="0"')
+                            @php($iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe))
+                            {!! $iframe !!}
+                        </p>
                     @endif
                     @php(the_field('project_description'))
                 </div>

@@ -6,9 +6,9 @@
     <div class="entry-summary year-{{ $term_name }}">
         <p class="concert_date">
             @if( get_locale() == 'fr_FR')
-                @php(the_field('date'))
+                @php(the_field('custom_date'))
             @else
-                @php($date = get_field('date', false, false))
+                @php($date = get_field('custom_date', false, false))
                 @php($date = new DateTime($date))
                 @php($date = $date->format('M jS Y'))
                 {{ $date }}

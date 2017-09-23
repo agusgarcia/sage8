@@ -10,7 +10,6 @@
 <div class="wrap container" role="document">
     <div class="content">
         <main class="main">
-            <div class="rotate-phone"><p>Please, rotate your phone</p></div>
             @yield('content')
         </main>
         @if (App\display_sidebar())

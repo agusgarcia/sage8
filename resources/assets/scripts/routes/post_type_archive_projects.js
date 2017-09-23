@@ -33,6 +33,12 @@ export default {
         $details.fadeOut();
         this.els.$blackBg.fadeOut();
         $detailsContent.scrollTop(0);
+
+        // Pause video
+        const $iframe = $('iframe', $details);
+        for (let i = 0; i < $iframe.length; i++) {
+            $iframe[i].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        }
     },
 
     scrollDetails(e) {

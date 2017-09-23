@@ -12,8 +12,11 @@
                     @php($the_query = new WP_Query(array(
        'post_type' => 'concert',
        'annee' => $term_name,
-       'order_by' => 'date',
-       'order' => 'ASC')))
+       'orderby' => 'meta_value_num',
+       'meta_type' => 'DATE',
+       'meta_key' => 'concert_date',
+       'posts_per_page' => -1,
+       'order' => 'DESC')))
                     @if($the_query->have_posts())
                         <li class="concert_year concert_year-{{ $term_name }}">
                             <p class="the-year">{{ $term_name }}</p>

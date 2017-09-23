@@ -81,3 +81,13 @@ add_filter('sage/display_sidebar', function ($sidebar) {
  * Tell WordPress how to find the compiled path of comments.blade.php
  */
 add_filter('comments_template', 'App\\template_path');
+
+/** Enable JS API on YouTube video iframes */
+
+function my_youtube_player_iframe_api( $html ) {
+    if ( false !== strpos( $html, 'youtube' ) ) {
+        $html = str_replace( '?feature=oembed', '?feature=oembed&enablejsapi=1', $html );
+    }
+    return $html;
+}
+
