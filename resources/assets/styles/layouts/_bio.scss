@@ -3,54 +3,100 @@
 
   article {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    /* justify-content: flex-end;*/
   }
   .bio-content {
+    clip-path: url('#svgPath-xs');
     color: $white;
     overflow: scroll;
     background-color: $orange;
-    height: 455px;
-    width: 730px;
+    display: inline-block;
+    //height: 455px;
+    //width: 730px;
     //margin-top: 70px;
     //margin-left: 70px;
     z-index: 1;
     padding: 0 15px 15px;
+    max-height: calc(100vh - 100px);
+    margin-bottom: 20px;
+
+    > * {
+      margin-left: 60px;
+      width: 70%;
+    }
+    > :first-child {
+      margin-top: 40px;
+    }
+    > :last-child {
+      margin-bottom: 70px;
+    }
   }
 
   img {
     z-index: 0;
     margin-top: 30px;
     width: 330px;
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
-    right: 40px;
-    left: 50px;
     margin-bottom: 10px;
-
+    position: relative;
   }
+
+  @media screen and (min-width: 480px) {
+    .bio-content {
+      max-width: 440px;
+      clip-path: url('#svgPath-s');
+    }
+  }
+  @media screen and (min-width: 640px) {
+    .bio-content {
+      clip-path: url('#svgPath-m');
+      max-width: 510px;
+      > * {
+        margin-left: 40px;
+      }
+      > :last-child {
+        margin-bottom: 350px;
+      }
+    }
+  }
+
   @media screen and (min-width: 768px) {
+    article {
+      justify-content: center;
+    }
     img {
-      width: 450px;
-      position: absolute;
+      order: 2;
+      margin-top: -60px;
+      z-index: 2;
+    }
+    .bio-content {
+      clip-path: url('#svgPath-l');
+      max-width: 700px;
+      margin-top: 50px;
+      > :last-child {
+        margin-bottom: 300px;
+      }
+    }
+  }
+  @media screen and (min-width: 1024px) {
+
+    article {
+      flex-wrap: nowrap;
+    }
+    img {
+      margin-top:50px;
+      //width: 420px;
+      //position: absolute;
     }
 
     .bio-content {
-      clip-path: url('#svgPath');
+    //  clip-path: url('#svgPath');
       padding: 0;
       padding-right: 25px;
-
-      > * {
-        margin-left: 80px;
-        width: 80%;
-      }
-      > :first-child {
-        margin-top: 80px;
-      }
-      > :last-child {
-        margin-bottom: 330px;
-      }
+      max-height: calc(100vh - 200px);
     }
   }
 

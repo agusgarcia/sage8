@@ -19,7 +19,8 @@ const config = merge({
     dist: path.join(rootPath, 'dist'),
   },
   enabled: {
-    sourceMaps: !isProduction,
+    // sourceMaps: !isProduction,
+    sourceMaps: false,
     optimize: isProduction,
     cacheBusting: isProduction,
     watcher: !!argv.watch,

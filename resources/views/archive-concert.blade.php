@@ -29,14 +29,6 @@
                 @endforeach
             </ul>
         @endif
-        <svg height="0" width="0">
-            <defs>
-                <clipPath id="svgPath">
-                    <polygon stroke-width="1.5794" stroke-miterlimit="10"
-                             points="1,1 211,425 415,293 664,306 546,90 204,65 " id="svg_2"/>
-                </clipPath>
-            </defs>
-        </svg>
 
 
         @php($terms = get_terms(array(
@@ -57,18 +49,38 @@
                         @endif
                     @endforeach
                 </ul>
-                <svg height="0" width="0">
-                    <defs>
-                        <clipPath id="svgPathArchives">
-                            <polygon stroke-width="1.5794" stroke-miterlimit="10"
-                                     points="0,13 78.4,231 64.6,110.8 162,107.6 141.3,0 "></polygon>
-                        </clipPath>
-                    </defs>
-                </svg>
             </div>
         @endif
-
-
     </div>
+    <svg height="0" width="0">
+        <defs>
+            <clipPath id="svgPath-xs">
+                <polygon points="351.6,-27 6.2,15.2 63,221.1 0,423.9 193.5,369.9 285.6,92.8 "/>
+            </clipPath>
+            <clipPath id="svgPath-s">
+                <polygon id="svg_2" points="351.6,-27 6.2,15.2 63,221.1 0,423.9 193.5,369.9 338,257 "/>
+            </clipPath>
+            <clipPath id="svgPath-m">
+                <polygon id="svg_2" points="501.1,11.5 6.2,15.2 112,233.7 44.2,435.2 318,401.9 514,302.3 505.9,119 387,92 503.6,67.9 "/>
+            </clipPath>
+            <clipPath id="svgPath-l">
+                <polygon id="svg_2" points="640.5,21.4 10.9,-3.3 109,241 83.6,445.4 430.1,425.8 771,331 623,283 703.3,219.2 652.8,135.9
+	499.9,100.4 646.9,81.5 "/>
+            </clipPath>
+            <clipPath id="svgPath">
+                <polygon points="57,27 233,509 489.9,350.8 784,366.4 644.6,107.6 240.7,77.7 "/>
+            </clipPath>
+        </defs>
+    </svg>
+    <svg height="0" width="0">
+        <defs>
+            <clipPath id="svgPathArchives">
+                <polygon stroke-width="1.5794" stroke-miterlimit="10"
+                         points="0,13 78.4,231 64.6,110.8 162,107.6 141.3,0 "></polygon>
+            </clipPath>
+        </defs>
+    </svg>
+
+
 @endsection
 

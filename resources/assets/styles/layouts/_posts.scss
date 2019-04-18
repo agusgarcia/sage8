@@ -25,6 +25,9 @@
 
     .entry-summary {
       font-size: 14px;
+      iframe {
+        max-width: 100%;
+      }
     }
     .read-more {
       color: white;
@@ -65,7 +68,7 @@
     */
     display: flex;
     align-items: flex-end;
-    position: absolute;
+    //position: absolute;
     bottom: 40px;
     header, .entry-content {
       width: 45vw;
@@ -74,7 +77,8 @@
     header {
       text-align: left;
       margin-bottom: 30px;
-      }
+      position: relative;
+    }
 
     .entry-content {
       font-size: 17px;
@@ -95,11 +99,11 @@
       }
     }
   }
-
   @media screen and (max-width: 768px) {
     article {
       align-items: center;
       flex-direction: column;
+
       .entry-content {
         width: 80%;
         max-height: 60vh;
